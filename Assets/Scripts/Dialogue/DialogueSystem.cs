@@ -18,7 +18,7 @@ public class DialogueSystem : MonoBehaviour
 
     public List<string> textList = new List<string>();
 
-    public CharacterComponent characterComponent;
+    //public CharacterComponent characterComponent;
 
     void Awake()
     {

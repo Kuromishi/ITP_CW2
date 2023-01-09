@@ -5,9 +5,6 @@ using UnityEngine;
 public class Level2Component : MonoBehaviour
 {
     public CharacterComponent characterComponent;
-    public DialogueSystem dialogueSystem;
-    public GameObject dialoguePanel;
-    public Animator panelAnimation;
 
     public GameObject countDown;
 
@@ -29,13 +26,16 @@ public class Level2Component : MonoBehaviour
     {
         characterComponent.canMove = false;
 
-        dialoguePanel.SetActive(true);
-        panelAnimation.SetBool("canAppear", true);
+        //Debug.Log("HERE!");
+
+        GameManager.Instance.panelDialogue.SetActive(true);
+        GameManager.Instance.panelAnimator.SetBool("canAppear", true);
+
         //play dialoguePanel animation, show dialogue after that
 
         yield return new WaitForSeconds(1f);
 
-        dialogueSystem.canPlayDialogue = true;
+        GameManager.Instance.dialogueSystem.canPlayDialogue = true;
 
         yield return new WaitUntil(HasDialogueOver); 
 
@@ -49,7 +49,7 @@ public class Level2Component : MonoBehaviour
 
     bool HasDialogueOver()
     {
-        if (dialogueSystem.canPlayDialogue == false)
+        if (GameManager.Instance.dialogueSystem.canPlayDialogue == false)
         {
             return true;
         }
@@ -61,7 +61,8 @@ public class Level2Component : MonoBehaviour
     {
         if (other.GetComponentInParent<CharacterComponent>() != null)
         {
-            
+            //closed to opened
+
         }
     }
 }

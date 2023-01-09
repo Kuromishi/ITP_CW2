@@ -11,6 +11,8 @@ public class Countdown : MonoBehaviour
 
     public Text TenCountDownText;
 
+    public ThornKill thornKill;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,12 @@ public class Countdown : MonoBehaviour
             if(totalTime==0) //print the 0
             {
                 TenCountDownText.text = string.Format("{0:D1}", (int)totalTime);
+
+                if(thornKill)   //if some levels don't have thorn
+                {
+                    thornKill.canDown = true;
+                }
+                
             }
         }
 

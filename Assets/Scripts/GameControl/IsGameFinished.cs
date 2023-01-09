@@ -6,6 +6,7 @@ public class IsGameFinished : MonoBehaviour
 {
     public static IsGameFinished Instance;
 
+    [Header("Level State")]
     public bool isLevel1Finished;
     public bool isLevel2Finished;
     public bool isLevel3Finished;
@@ -17,7 +18,7 @@ public class IsGameFinished : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             Instance = this;
         }
-        else if (Instance != null)
+        else
         {
             Destroy(gameObject);
         }

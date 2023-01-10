@@ -27,7 +27,7 @@ public class CharacterComponent : MonoBehaviour
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
     }
-
+    
     private void Start()
     {
         //canMove = true;

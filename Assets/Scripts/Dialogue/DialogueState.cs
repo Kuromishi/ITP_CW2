@@ -25,13 +25,13 @@ public class DialogueState : MonoBehaviour
 
     private void Update()
     {
-        if(IsGameFinished.Instance.isLevel1Finished)
+        if(GameManager.Instance.isLevel1Finished)
             levelState = LevelState.Level2;
 
-        if(IsGameFinished.Instance.isLevel2Finished)
+        if(GameManager.Instance.isLevel2Finished)
             levelState = LevelState.Level3;
 
-        if(IsGameFinished.Instance.isLevel3Finished)
+        if(GameManager.Instance.isLevel3Finished)
             levelState = LevelState.Level4;
 
         switch (levelState)

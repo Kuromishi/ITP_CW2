@@ -11,7 +11,7 @@ public class ToLevel2 : MonoBehaviour
 
         if(other.GetComponentInParent<CharacterComponent>()!=null)
         {
-            IsGameFinished.Instance.isLevel1Finished = true;
+            GameManager.Instance.isLevel1Finished = true;
             ToNextLevel();
            // Invoke("ToNextLevel", 3);
         }

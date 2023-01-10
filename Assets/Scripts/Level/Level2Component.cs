@@ -11,8 +11,18 @@ public class Level2Component : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (GameManager.Instance.isLevel2DialogueShown == false)
+        {
+            GameManager.Instance.isLevel2DialogueShown = true;
+            StartCoroutine(ShowDialogue());
+        }
+        else
+        {
+            characterComponent.canMove = true;
+        }
        
-        StartCoroutine(ShowDialogue());
+       //判断false才能加载 true就不行
+       
         
     }
 

@@ -50,9 +50,9 @@ public class LaserEnemy : MonoBehaviour
 
         
 
-        if(hitInfo.collider.gameObject.GetComponent<CharacterComponent>()!=null)  //hit the player
+        if(hitInfo.collider.gameObject.GetComponentInParent<CharacterComponent>()!=null)  //hit the player
         {
-            Debug.Log("Player Died!");
+           // Debug.Log("Player Died!");
         }
     }
 }

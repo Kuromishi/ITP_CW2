@@ -364,6 +364,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7885272324675872034, guid: b8e6cd1c5a165984babb2650bda8d267, type: 3}
+      propertyPath: shootingForce.y
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 7885272324675872037, guid: b8e6cd1c5a165984babb2650bda8d267, type: 3}
       propertyPath: m_RootOrder
       value: 1

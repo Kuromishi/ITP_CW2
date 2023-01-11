@@ -11,14 +11,15 @@ public class CharacterComponent : MonoBehaviour
     public float jumpHeight;
     public bool canMove;
     [SerializeField] private bool isWalking;
-    [SerializeField] private bool isRotating;
-    public float downForce;
 
+    [Header("Raycast")]
     public float rayLength;
     public float xOffset;
 
+    [Header("Rotating")]
+    [SerializeField] private bool isRotating;
     public float rotateSpeed;
-
+    public float downForce;
     private Vector3 mousePosition;
     private Vector2 shootingDirection;
     public Vector2 shootingForce;
@@ -30,7 +31,7 @@ public class CharacterComponent : MonoBehaviour
     private Animator anim;
     private SpriteRenderer sr;
 
-    [Header("State")]
+    [Header("Life State")]
     public bool isPlayerDead;
 
     private void Awake()
@@ -178,5 +179,6 @@ public class CharacterComponent : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);  //reload current scene
     }
+
 
 }

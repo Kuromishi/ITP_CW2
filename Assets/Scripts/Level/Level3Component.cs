@@ -11,8 +11,15 @@ public class Level3Component : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        StartCoroutine(ShowDialogue2());
+        if (GameManager.Instance.isLevel3DialogueShown == false)
+        {
+            GameManager.Instance.isLevel3DialogueShown = true;
+            StartCoroutine(ShowDialogue());
+        }
+        else
+        {
+            characterComponent.canMove = true;
+        }
 
     }
 
@@ -22,7 +29,7 @@ public class Level3Component : MonoBehaviour
 
     }
 
-    IEnumerator ShowDialogue2()
+    IEnumerator ShowDialogue()
     {
         characterComponent.canMove = false;
 

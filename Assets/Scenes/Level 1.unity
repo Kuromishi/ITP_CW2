@@ -908,6 +908,9 @@ MonoBehaviour:
   isLevel1Finished: 0
   isLevel2Finished: 0
   isLevel3Finished: 0
+  isLevel2DialogueShown: 0
+  isLevel3DialogueShown: 0
+  isLevel4DialogueShown: 0
   dialogueSystem: {fileID: 911594416}
   panelDialogue: {fileID: 911594411}
   panelAnimator: {fileID: 911594412}
@@ -1442,7 +1445,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1781416334}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4055f556f21fa1e4c97399042efa0178, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

@@ -10,8 +10,9 @@ public class CharacterComponent : MonoBehaviour
     public float moveSpeed;
     public float jumpHeight;
     public bool canMove;
-    public bool isRotating;
-    public bool canJump;
+    [SerializeField] private bool isWalking;
+    [SerializeField] private bool isRotating;
+    public float downForce;
 
     public float rayLength;
     public float xOffset;
@@ -20,7 +21,7 @@ public class CharacterComponent : MonoBehaviour
 
     private Vector3 mousePosition;
     private Vector2 shootingDirection;
-    public float shootingForce;
+    public Vector2 shootingForce;
     [SerializeField] private bool isMouseDown;
     [SerializeField] private bool backToGround;
 
@@ -47,71 +48,86 @@ public class CharacterComponent : MonoBehaviour
 
     private void Update()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-
-        if (IsGrounded(xOffset) || IsGrounded(-xOffset)) //two ray, left and right of the body
+        if(canMove)
         {
-            anim.SetBool("OnGround", true);
-            backToGround = true;
+            horizontalInput = Input.GetAxisRaw("Horizontal");
 
-            if (Input.GetKeyDown(KeyCode.Space) && canMove && isRotating==false)
+            if (IsGrounded(xOffset) || IsGrounded(-xOffset)) //two ray, left and right of the body
             {
-                rb.velocity = new Vector2(rb.velocity.x, jumpHeight); //only change y axis
+                anim.SetBool("OnGround", true);
+                backToGround = true;
+
+                if (Input.GetKeyDown(KeyCode.Space) && isRotating == false)
+                {
+                    rb.velocity = new Vector2(rb.velocity.x, jumpHeight); //only change y axis
+
+                }
+
+            }
+            else
+            {
+                anim.SetBool("OnGround", false);
+                backToGround = false;
+            }
+
+            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            //Rotating & Shooting Logic
+            if (Input.GetKey(KeyCode.S))
+            {
+                isRotating = true;
+                anim.SetBool("CanRoll", true);
+            }
+            else if (Input.GetKeyDown(KeyCode.S))
+            {
+                isRotating = true;
+                anim.SetBool("CanRoll", true);
+            }
+            else if (Input.GetKeyUp(KeyCode.S))
+            {
+                isRotating = false;
+                anim.SetBool("CanRoll", false);
+
+                //Directly falling to the ground
+                if(backToGround==false)
+                {
+                    rb.velocity = new Vector2(0, -downForce);
+                }
+                
 
             }
 
+            if (Input.GetMouseButtonDown(0) && backToGround && isRotating) //press LMB and you're on ground
+            {
+                isMouseDown = true;
+
+                //Debug.Log("Shoooooot");
+            }
+
+            if(backToGround)
+            {
+                isWalking = true;
+            }
+
+            
+            if (isPlayerDead)
+            {
+                //Debug.Log("You are dead");
+                canMove = false;
+
+                anim.SetBool("IsDead", true);
+
+                //Reload after character dead animation over
+                Invoke("ReloadScene", 3);
+
+            }
         }
-        else
-        {
-            anim.SetBool("OnGround", false);
-        }
-
-        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-
-        if (Input.GetKey(KeyCode.S) && canMove)
-        {
-            isRotating = true;
-            anim.SetBool("CanRoll", true);
-        }
-        else if(Input.GetKeyDown(KeyCode.S) && canMove)
-        {
-            isRotating = true;
-            anim.SetBool("CanRoll", true);
-        }
-        else if(Input.GetKeyUp(KeyCode.S) && canMove)
-        {
-            isRotating = false;
-            anim.SetBool("CanRoll", false);
-        }
-
-        if(Input.GetMouseButtonDown(0)&& backToGround) //press LMB and you're on ground
-        {
-            isMouseDown = true;
-
-            //Debug.Log("Shoooooot");
-        }
-
-
-        if (isPlayerDead)
-        {
-            //Debug.Log("You are dead");
-            canMove = false;
-
-            anim.SetBool("IsDead", true);
-
-            //Reload after character dead animation over
-            Invoke("ReloadScene", 3);
-
-        }
-
-
 
     }
 
     private void FixedUpdate()
     {
-        if(canMove)
+        if(canMove && isWalking)
         {
             rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
             anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
@@ -124,7 +140,6 @@ public class CharacterComponent : MonoBehaviour
 
         }
 
-        //Move(horizontalInput, 1);
         if (isRotating)
         {
             shootingDirection = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
@@ -132,8 +147,9 @@ public class CharacterComponent : MonoBehaviour
 
             if (isMouseDown)
             {
-                rb.AddForce(shootingDirection * shootingForce, ForceMode2D.Impulse);
-                backToGround = false;
+                isWalking = false;
+                rb.AddForce(new Vector2(shootingDirection.normalized.x * shootingForce.x, shootingDirection.normalized.y *shootingForce.y), ForceMode2D.Impulse);
+                //Debug.Log(shootingDirection.normalized * shootingForce);
                 isMouseDown = false;
             }
 

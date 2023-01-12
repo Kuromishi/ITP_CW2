@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BatEnemy : MonoBehaviour
 {
-    public float enemyMoveSpeed;
+    [Header("Death")]
     private Animator anim_Bat;
     public GameObject batBlood;
     private Rigidbody2D batRB;
@@ -14,6 +15,10 @@ public class BatEnemy : MonoBehaviour
 
     [Range(0,1)]
     private float T=0;
+
+    [Header("Irregular movement")]
+    public float batMoveSpeed;
+
 
     private void Start()
     {
@@ -27,8 +32,8 @@ public class BatEnemy : MonoBehaviour
         //move randomly in a specific area
 
 
-
-        if(canBatDisappear)
+        //bat drop to the ground, and gradually disappear
+        if (canBatDisappear)
         {
             T += disappearSpeed * Time.deltaTime;
             Color color = batRenderer.color;
@@ -38,14 +43,10 @@ public class BatEnemy : MonoBehaviour
 
             if (color.a == 0)
             {
-                Destroy(gameObject);
+                //Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
-
-    }
-
-    private void FollowPlayer()
-    {
 
     }
 
@@ -58,8 +59,6 @@ public class BatEnemy : MonoBehaviour
             //Instantiate(batBlood, gameObject.transform);
             batBlood.SetActive(true);
 
-            //bat drop to the ground, and gradually disappear
-
         }
         if (collision.gameObject.GetComponent<Ground>() != null)
         {
@@ -67,5 +66,4 @@ public class BatEnemy : MonoBehaviour
             //Debug.Log("BatOnGround");
         }
     }
-
 }

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BounceEnemy : MonoBehaviour
+public class BossEnemy : MonoBehaviour
 {
     public Transform targetPlayer;
-    public float enemyMoveSpeed;
+    public float bossMoveSpeed;
 
     private void Start()
     {
@@ -19,6 +19,6 @@ public class BounceEnemy : MonoBehaviour
 
     private void FollowPlayer()
     {
-        transform.position = Vector2.MoveTowards(transform.position, targetPlayer.position, enemyMoveSpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, targetPlayer.position, bossMoveSpeed * Time.deltaTime);
     }
 }

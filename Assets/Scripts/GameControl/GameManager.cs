@@ -20,7 +20,11 @@ public class GameManager : MonoBehaviour
     public DialogueSystem dialogueSystem;
     public GameObject panelDialogue;
     public Animator panelAnimator;
-    
+
+    [Header("Cursor")]
+    public Texture2D clickTexture;
+    public Texture2D upTexture;
+
     private void Awake()
     {
         if (Instance == null)
@@ -31,6 +35,18 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void Update()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            Cursor.SetCursor(clickTexture, Vector2.zero, CursorMode.Auto);
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            Cursor.SetCursor(upTexture, Vector2.zero, CursorMode.Auto);
         }
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelBatComponent : MonoBehaviour
+public class BatGroupControl : MonoBehaviour
 {
     public GameObject batEmeny1;
     public GameObject batEmeny2;

@@ -7,15 +7,16 @@ public class BatGroupControl : MonoBehaviour
     public GameObject batEmeny1;
     public GameObject batEmeny2;
     public GameObject batEmeny3;
-    public GameObject batEmeny4;
+
+    public bool levelBatSuccess;
 
     private void Update()
     {
-        if(!batEmeny1.activeSelf && !batEmeny2.activeSelf && !batEmeny3.activeSelf && !batEmeny4.activeSelf)
+        if(!batEmeny1.activeSelf && !batEmeny2.activeSelf && !batEmeny3.activeSelf)
         {
             //Debug.Log("Bat Died");
             //when all the four bats died in 10 seconds...the exit is active
-
+            levelBatSuccess = true;
         }
     }
 }

@@ -7,7 +7,7 @@ public class DialogueState : MonoBehaviour
     [Header("Textfile")]
     public TextAsset level2_TextFile;
     public TextAsset level3_TextFile;
-    public TextAsset level4_TextFile;
+    public TextAsset levelBat_TextFile;
 
     [Header("Other Settings")]
     public DialogueSystem dialogueSystem;
@@ -17,7 +17,7 @@ public class DialogueState : MonoBehaviour
         NoLevel,
         Level2,
         Level3,
-        Level4
+        LevelBat
     }
 
     [Header("Level State")]
@@ -32,7 +32,7 @@ public class DialogueState : MonoBehaviour
             levelState = LevelState.Level3;
 
         if(GameManager.Instance.isLevel3Finished)
-            levelState = LevelState.Level4;
+            levelState = LevelState.LevelBat;
 
         switch (levelState)
         {
@@ -47,12 +47,12 @@ public class DialogueState : MonoBehaviour
 
                 break;
 
-            case LevelState.Level4:
 
-                dialogueSystem.textFile = level4_TextFile;
+            case LevelState.LevelBat:
+
+                dialogueSystem.textFile = levelBat_TextFile;
 
                 break;
-
 
         }
     }

@@ -6,6 +6,7 @@ public class LaserEnemy : MonoBehaviour
 {
     public float speed = 80f;
     private bool isShooting;
+    public bool canLaserStart;
 
     [Header("Raycast")]
     public LineRenderer laserLine1;
@@ -35,16 +36,20 @@ public class LaserEnemy : MonoBehaviour
 
     private void Update()
     {
-        transform.Rotate(-Vector3.forward * Time.deltaTime * speed);
-
-        if (isShooting)
+        if(canLaserStart)
         {
-            ShootLaser(laserLine1, firePoint1, laserParticle1);
-            ShootLaser(laserLine2, firePoint2, laserParticle2);
-            ShootLaser(laserLine3, firePoint3, laserParticle3);
-            ShootLaser(laserLine4, firePoint4, laserParticle4);
+            transform.Rotate(-Vector3.forward * Time.deltaTime * speed);
 
+            if (isShooting)
+            {
+                ShootLaser(laserLine1, firePoint1, laserParticle1);
+                ShootLaser(laserLine2, firePoint2, laserParticle2);
+                ShootLaser(laserLine3, firePoint3, laserParticle3);
+                ShootLaser(laserLine4, firePoint4, laserParticle4);
+
+            }
         }
+        
     }
 
     public void ShootLaser(LineRenderer laserLine, Transform firePoint, ParticleSystem laserParticle )

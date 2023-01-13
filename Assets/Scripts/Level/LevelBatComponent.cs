@@ -1,19 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Level3Component : MonoBehaviour
+public class LevelBatComponent : MonoBehaviour
 {
     public CharacterComponent characterComponent;
 
     public GameObject countDown;
+    public BatGroupControl batGroupControl;
+
+    private bool canExit;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (GameManager.Instance.isLevel3DialogueShown == false)
+        if (GameManager.Instance.isLevel4DialogueShown == false)
         {
-            GameManager.Instance.isLevel3DialogueShown = true;
+            GameManager.Instance.isLevel4DialogueShown = true;
             StartCoroutine(ShowDialogue());
         }
         else
@@ -27,6 +31,11 @@ public class Level3Component : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (batGroupControl.levelBatSuccess)
+        {
+            //exit closed to opened
+            canExit = true;
+        }
 
     }
 
@@ -67,10 +76,10 @@ public class Level3Component : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponentInParent<CharacterComponent>() != null)
+        if (other.GetComponentInParent<CharacterComponent>() != null && canExit)
         {
-            //closed to opened
-
+            GameManager.Instance.isLevel4Finished = true;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

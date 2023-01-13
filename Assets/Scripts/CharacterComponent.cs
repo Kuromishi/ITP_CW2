@@ -90,11 +90,11 @@ public class CharacterComponent : MonoBehaviour
                 anim.SetBool("CanRoll", false);
 
                 //Directly falling to the ground
-                if(backToGround==false)
+                if (backToGround == false)
                 {
                     rb.velocity = new Vector2(0, -downForce);
                 }
-                
+
 
             }
 

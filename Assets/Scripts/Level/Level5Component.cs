@@ -2,24 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Level3Component : MonoBehaviour
+public class Level5Component : MonoBehaviour
 {
     public CharacterComponent characterComponent;
 
     public GameObject countDown;
+    public LaserEnemy laserEnemy;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (GameManager.Instance.isLevel3DialogueShown == false)
+        if (GameManager.Instance.isLevel4DialogueShown == false)
         {
-            GameManager.Instance.isLevel3DialogueShown = true;
+            GameManager.Instance.isLevel4DialogueShown = true;
             StartCoroutine(ShowDialogue());
         }
         else
         {
             characterComponent.canMove = true;
             countDown.SetActive(true);
+            laserEnemy.canLaserStart = true;
         }
 
     }
@@ -51,6 +53,7 @@ public class Level3Component : MonoBehaviour
 
         //10 seconds countdown
         countDown.SetActive(true);
+        laserEnemy.canLaserStart = true;
 
         yield return null;
     }

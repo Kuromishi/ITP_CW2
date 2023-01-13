@@ -19,6 +19,7 @@ public class Level2Component : MonoBehaviour
         else
         {
             characterComponent.canMove = true;
+            countDown.SetActive(true);
         }
        
        //判断false才能加载 true就不行

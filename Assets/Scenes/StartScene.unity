@@ -155,6 +155,7 @@ MonoBehaviour:
   isLevel1Finished: 0
   isLevel2Finished: 0
   isLevel3Finished: 0
+  isLevel4Finished: 0
   isLevel2DialogueShown: 0
   isLevel3DialogueShown: 0
   isLevel4DialogueShown: 0
@@ -436,7 +437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level2_TextFile: {fileID: 4900000, guid: b78454dc5c0ecc84d83419543dbcbbe1, type: 3}
   level3_TextFile: {fileID: 4900000, guid: 8b2bf37fcd3c92c40b33797d38755f6f, type: 3}
-  level4_TextFile: {fileID: 4900000, guid: ebbd9311d7a4720428bfa4ff4df3bacf, type: 3}
+  levelBat_TextFile: {fileID: 0}
   dialogueSystem: {fileID: 1159218129}
   levelState: 0
 --- !u!114 &319109626
@@ -578,7 +579,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &348350744
 RectTransform:

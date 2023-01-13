@@ -51,7 +51,7 @@ public class CharacterComponent : MonoBehaviour
     {
         if(canMove)
         {
-            horizontalInput = Input.GetAxisRaw("Horizontal");
+            horizontalInput = Input.GetAxisRaw("Horizontal"); //-1,0,1
 
             if (IsGrounded(xOffset) || IsGrounded(-xOffset)) //two ray, left and right of the body
             {
@@ -92,9 +92,10 @@ public class CharacterComponent : MonoBehaviour
                 //Directly falling to the ground
                 if (backToGround == false)
                 {
-                    rb.velocity = new Vector2(0, -downForce);
+                    //rb.velocity = new Vector2(0, -downForce);
+                    rb.velocity = new Vector2(horizontalInput * moveSpeed, -downForce);
+                  // Debug.Log(horizontalInput);
                 }
-
 
             }
 

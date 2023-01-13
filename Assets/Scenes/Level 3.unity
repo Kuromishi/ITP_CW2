@@ -1867,7 +1867,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8162153913017980844, guid: 1a848130968ec4d4daaa8097508d3ac7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.8
+      value: 7.01
       objectReference: {fileID: 0}
     - target: {fileID: 8162153913017980844, guid: 1a848130968ec4d4daaa8097508d3ac7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2417,6 +2417,7 @@ MonoBehaviour:
   isLevel1Finished: 0
   isLevel2Finished: 0
   isLevel3Finished: 0
+  isLevel4Finished: 0
   isLevel2DialogueShown: 0
   isLevel3DialogueShown: 0
   isLevel4DialogueShown: 0
@@ -2626,7 +2627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level2_TextFile: {fileID: 4900000, guid: b78454dc5c0ecc84d83419543dbcbbe1, type: 3}
   level3_TextFile: {fileID: 4900000, guid: 8b2bf37fcd3c92c40b33797d38755f6f, type: 3}
-  level4_TextFile: {fileID: 4900000, guid: ebbd9311d7a4720428bfa4ff4df3bacf, type: 3}
+  levelBat_TextFile: {fileID: 0}
   dialogueSystem: {fileID: 962165911}
   levelState: 0
 --- !u!1 &1844211758

@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 5_Laser.unity
     guid: d24a09116459a2f478d32b330af1b9c7
+  - enabled: 1
+    path: Assets/Scenes/Level 6.unity
+    guid: ac6f656c1fda4f843a9c7d69d0f73eee
   m_configObjects: {}

@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class Countdown : MonoBehaviour
 {
     private float totalTime = 10;
-    private float intervalTime = 1;
 
     public Text TenCountDownText;
 

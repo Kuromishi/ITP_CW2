@@ -7,6 +7,7 @@ public class Level3Component : MonoBehaviour
     public CharacterComponent characterComponent;
 
     public GameObject countDown;
+    public GameObject pauseButton;
 
     // Start is called before the first frame update
     void Start()
@@ -14,12 +15,14 @@ public class Level3Component : MonoBehaviour
         if (GameManager.Instance.isLevel3DialogueShown == false)
         {
             GameManager.Instance.isLevel3DialogueShown = true;
+            pauseButton.SetActive(false);
             StartCoroutine(ShowDialogue());
         }
         else
         {
             characterComponent.canMove = true;
             countDown.SetActive(true);
+            pauseButton.SetActive(true);
         }
 
     }
@@ -51,6 +54,7 @@ public class Level3Component : MonoBehaviour
 
         //10 seconds countdown
         countDown.SetActive(true);
+        pauseButton.SetActive(true);
 
         yield return null;
     }

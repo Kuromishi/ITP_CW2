@@ -9,6 +9,7 @@ public class LevelBatComponent : MonoBehaviour
 
     public GameObject countDown;
     public BatGroupControl batGroupControl;
+    public GameObject pauseButton;
 
     private bool canExit;
 
@@ -18,12 +19,14 @@ public class LevelBatComponent : MonoBehaviour
         if (GameManager.Instance.isLevel4DialogueShown == false)
         {
             GameManager.Instance.isLevel4DialogueShown = true;
+            pauseButton.SetActive(false);
             StartCoroutine(ShowDialogue());
         }
         else
         {
             characterComponent.canMove = true;
             countDown.SetActive(true);
+            pauseButton.SetActive(true);
         }
 
     }
@@ -60,6 +63,7 @@ public class LevelBatComponent : MonoBehaviour
 
         //10 seconds countdown
         countDown.SetActive(true);
+        pauseButton.SetActive(true);
 
         yield return null;
     }

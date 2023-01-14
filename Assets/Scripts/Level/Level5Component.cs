@@ -8,6 +8,7 @@ public class Level5Component : MonoBehaviour
 
     public GameObject countDown;
     public LaserEnemy laserEnemy;
+    public GameObject pauseButton;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,7 @@ public class Level5Component : MonoBehaviour
         if (GameManager.Instance.isLevel4DialogueShown == false)
         {
             GameManager.Instance.isLevel4DialogueShown = true;
+            pauseButton.SetActive(false);
             StartCoroutine(ShowDialogue());
         }
         else
@@ -22,6 +24,7 @@ public class Level5Component : MonoBehaviour
             characterComponent.canMove = true;
             countDown.SetActive(true);
             laserEnemy.canLaserStart = true;
+            pauseButton.SetActive(true);
         }
 
     }
@@ -54,6 +57,7 @@ public class Level5Component : MonoBehaviour
         //10 seconds countdown
         countDown.SetActive(true);
         laserEnemy.canLaserStart = true;
+        pauseButton.SetActive(true);
 
         yield return null;
     }

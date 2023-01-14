@@ -19,6 +19,7 @@ public class ThornKill : MonoBehaviour
         if(canDown)
         {
             anim_Thorn.SetBool("canFall", true);
+            
         }
     }
 

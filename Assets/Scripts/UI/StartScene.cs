@@ -19,7 +19,7 @@ public class StartScene : MonoBehaviour
         GameManager.Instance.isLevel3DialogueShown = false;
         GameManager.Instance.isLevel4DialogueShown = false;
         GameManager.Instance.isLevel5DialogueShown = false;
-        GameManager.Instance.isLevel6DialogueShown = false;
+        //GameManager.Instance.isLevel6DialogueShown = false;
     }
     public void ContinueGame()
     {

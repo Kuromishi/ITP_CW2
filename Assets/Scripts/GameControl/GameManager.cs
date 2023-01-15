@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public bool isLevel3DialogueShown;
     public bool isLevel4DialogueShown;
     public bool isLevel5DialogueShown;
-    public bool isLevel6DialogueShown;
+    //public bool isLevel6DialogueShown;
 
     [Header("Dialogue System")]
     public DialogueSystem dialogueSystem;

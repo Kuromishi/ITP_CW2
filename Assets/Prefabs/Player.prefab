@@ -4984,6 +4984,7 @@ MonoBehaviour:
   isPlayerDead: 0
   characterBlood: {fileID: 1996070488454094760}
   jump_PlayerClip: {fileID: 8300000, guid: f05307a360a20d542ac332691288c516, type: 3}
+  dead_PlayerClip: {fileID: 8300000, guid: ce4c28771d8d9d841bd06bc1f7251882, type: 3}
 --- !u!95 &7885272324675872038
 Animator:
   serializedVersion: 4

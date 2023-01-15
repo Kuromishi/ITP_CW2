@@ -1,37 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Level5Component : MonoBehaviour
+public class Level6Component : MonoBehaviour
 {
     public CharacterComponent characterComponent;
 
-    public GameObject countDown;
-    public LaserEnemy laserEnemy;
     public GameObject pauseButton;
+    public GameObject hugeMonsterObject;
+    public GameObject playerCharacter;
+    public GameObject sparkParticle;
+
+    private bool canLoadScene;
+
+    AudioSource monsterAudioSource;
+    public AudioClip monster_AudioClip;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (GameManager.Instance.isLevel5DialogueShown == false)
-        {
-            GameManager.Instance.isLevel5DialogueShown = true;
-            pauseButton.SetActive(false);
-            StartCoroutine(ShowDialogue());
-        }
-        else
-        {
-            characterComponent.canMove = true;
-            countDown.SetActive(true);
-            laserEnemy.canLaserStart = true;
-            pauseButton.SetActive(true);
-        }
-
+        pauseButton.SetActive(false);
+        StartCoroutine(ShowDialogue());
+        monsterAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (canLoadScene)
+        {
+            SceneManager.LoadScene(0);
+        }
 
     }
 
@@ -52,12 +52,23 @@ public class Level5Component : MonoBehaviour
 
         yield return new WaitUntil(HasDialogueOver);
 
-        characterComponent.canMove = true;
-
-        //10 seconds countdown
-        countDown.SetActive(true);
-        laserEnemy.canLaserStart = true;
         pauseButton.SetActive(true);
+
+
+        yield return new WaitForSeconds(1f);
+        //Final 
+
+        playerCharacter.SetActive(false);
+        sparkParticle.SetActive(true);
+        yield return new WaitForSeconds(2f);
+
+        hugeMonsterObject.SetActive(true);
+        monsterAudioSource.clip = monster_AudioClip;
+        monsterAudioSource.Play();
+
+        yield return new WaitForSeconds(2.7f);
+
+        canLoadScene = true;
 
         yield return null;
     }
@@ -72,12 +83,5 @@ public class Level5Component : MonoBehaviour
             return false;
     }
 
-    //private void OnTriggerEnter2D(Collider2D other)
-    //{
-    //    if (other.GetComponentInParent<CharacterComponent>() != null)
-    //    {
-    //        //closed to opened
 
-    //    }
-    //}
 }

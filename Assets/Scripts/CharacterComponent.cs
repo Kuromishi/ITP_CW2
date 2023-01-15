@@ -39,6 +39,7 @@ public class CharacterComponent : MonoBehaviour
     AudioSource playerAudioSource;
     public AudioClip jump_PlayerClip;
     public AudioClip dead_PlayerClip;
+    public AudioClip xiu_PlayerClip;
 
     private void Awake()
     {
@@ -64,6 +65,7 @@ public class CharacterComponent : MonoBehaviour
             {
                 anim.SetBool("OnGround", true);
                 backToGround = true;
+
 
                 if (Input.GetKeyDown(KeyCode.Space) && isRotating == false)
                 {
@@ -119,6 +121,7 @@ public class CharacterComponent : MonoBehaviour
             if(backToGround)
             {
                 isWalking = true;
+
             }
 
             
@@ -166,6 +169,10 @@ public class CharacterComponent : MonoBehaviour
                 isWalking = false;
                 rb.AddForce(new Vector2(shootingDirection.normalized.x * shootingForce.x, shootingDirection.normalized.y *shootingForce.y), ForceMode2D.Impulse);
                 //Debug.Log(shootingDirection.normalized * shootingForce);
+
+                playerAudioSource.clip = xiu_PlayerClip;
+                playerAudioSource.Play();
+
                 isMouseDown = false;
             }
 

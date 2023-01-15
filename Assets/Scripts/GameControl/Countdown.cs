@@ -10,7 +10,7 @@ public class Countdown : MonoBehaviour
 
     public Text TenCountDownText;
 
-    public ThornKill thornKill;
+    public GameObject thornKill;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +38,7 @@ public class Countdown : MonoBehaviour
 
                 if(thornKill)   //if some levels don't have thorn
                 {
-                    thornKill.canDown = true;
+                    thornKill.SetActive (true);
                 }
                 
             }

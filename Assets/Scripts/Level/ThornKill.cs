@@ -5,25 +5,25 @@ using UnityEngine;
 public class ThornKill : MonoBehaviour
 {
     public CharacterComponent characterComponent;
-    public bool canDown;
+    //public bool canDown;
     private Animator anim_Thorn;
     AudioSource thornAudioSource;
     public AudioClip down_ThornClip;
 
     private void Start()
     {
-        canDown = false;
+        //canDown = false;
         anim_Thorn = GetComponent<Animator>();
         thornAudioSource = GetComponent<AudioSource>();
     }
 
     public void Update()
     {
-        if(canDown)
-        {
+        //if(canDown)
+        //{
             anim_Thorn.SetBool("canFall", true);
 
-        }
+        //}
     }
 
     private void OnTriggerEnter2D(Collider2D other)

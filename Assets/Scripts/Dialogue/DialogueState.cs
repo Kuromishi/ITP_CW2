@@ -38,6 +38,12 @@ public class DialogueState : MonoBehaviour
         if(GameManager.Instance.isLevel3Finished)
             levelState = LevelState.Level4;
 
+        if (GameManager.Instance.isLevel4Finished)
+            levelState = LevelState.Level5;
+
+        if (GameManager.Instance.isLevel5Finished)
+            levelState = LevelState.Level6;
+
         switch (levelState)
         {
             case LevelState.Level2:

@@ -692,7 +692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TenCountDownText: {fileID: 186599280}
-  thornKill: {fileID: 1757101864}
+  thornKill: {fileID: 1422174726}
 --- !u!1 &205198558
 GameObject:
   m_ObjectHideFlags: 0
@@ -5326,6 +5326,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Thorn
       objectReference: {fileID: 0}
+    - target: {fileID: 8162153913017980843, guid: 1a848130968ec4d4daaa8097508d3ac7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8162153913017980844, guid: 1a848130968ec4d4daaa8097508d3ac7, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -5384,6 +5388,11 @@ PrefabInstance:
       objectReference: {fileID: 1745924607}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a848130968ec4d4daaa8097508d3ac7, type: 3}
+--- !u!1 &1422174726 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8162153913017980843, guid: 1a848130968ec4d4daaa8097508d3ac7, type: 3}
+  m_PrefabInstance: {fileID: 1422174725}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1486631430
 GameObject:
   m_ObjectHideFlags: 0
@@ -6105,7 +6114,6 @@ MonoBehaviour:
   isLevel3DialogueShown: 0
   isLevel4DialogueShown: 0
   isLevel5DialogueShown: 0
-  isLevel6DialogueShown: 0
   dialogueSystem: {fileID: 850241332}
   panelDialogue: {fileID: 850241329}
   panelAnimator: {fileID: 850241331}
@@ -6289,17 +6297,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3da39abffbeacbb4ba34175cf9b99198, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1757101864 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8162153913017980847, guid: 1a848130968ec4d4daaa8097508d3ac7, type: 3}
-  m_PrefabInstance: {fileID: 1422174725}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d7ffb99c5921b74885ca13b18079a17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1773828263

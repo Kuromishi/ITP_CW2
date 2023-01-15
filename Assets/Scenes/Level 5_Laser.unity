@@ -12013,17 +12013,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &732928199 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8162153913017980847, guid: 1a848130968ec4d4daaa8097508d3ac7, type: 3}
-  m_PrefabInstance: {fileID: 1422174725}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d7ffb99c5921b74885ca13b18079a17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &737509673
 GameObject:
   m_ObjectHideFlags: 0
@@ -12140,7 +12129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TenCountDownText: {fileID: 757750268}
-  thornKill: {fileID: 732928199}
+  thornKill: {fileID: 1422174726}
 --- !u!114 &757750268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23227,7 +23216,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 72
-  characterComponent: {fileID: 0}
+  characterComponent: {fileID: 1745924607}
   laserParticle1: {fileID: 523393982}
   laserParticle2: {fileID: 1200623052}
   laserParticle3: {fileID: 933741711}
@@ -23588,6 +23577,11 @@ PrefabInstance:
       objectReference: {fileID: 1745924607}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a848130968ec4d4daaa8097508d3ac7, type: 3}
+--- !u!1 &1422174726 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8162153913017980843, guid: 1a848130968ec4d4daaa8097508d3ac7, type: 3}
+  m_PrefabInstance: {fileID: 1422174725}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1423379493
 GameObject:
   m_ObjectHideFlags: 0
@@ -24586,7 +24580,6 @@ MonoBehaviour:
   isLevel3DialogueShown: 0
   isLevel4DialogueShown: 0
   isLevel5DialogueShown: 0
-  isLevel6DialogueShown: 0
   dialogueSystem: {fileID: 314902205}
   panelDialogue: {fileID: 314902200}
   panelAnimator: {fileID: 314902201}

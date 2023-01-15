@@ -1951,7 +1951,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8162153913017980844
 Transform:
   m_ObjectHideFlags: 0
@@ -2032,7 +2032,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterComponent: {fileID: 0}
-  canDown: 0
   down_ThornClip: {fileID: 8300000, guid: c373194b650e3904db5b78d2df1c5acd, type: 3}
 --- !u!61 &8162153913017980846
 BoxCollider2D:

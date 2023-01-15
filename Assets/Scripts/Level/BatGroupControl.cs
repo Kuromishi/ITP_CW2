@@ -10,6 +10,8 @@ public class BatGroupControl : MonoBehaviour
 
     public bool levelBatSuccess;
 
+    public DoorOpen doorOpen;
+
     private void Update()
     {
         if(!batEmeny1.activeSelf && !batEmeny2.activeSelf && !batEmeny3.activeSelf)
@@ -17,6 +19,7 @@ public class BatGroupControl : MonoBehaviour
             //Debug.Log("Bat Died");
             //when all the four bats died in 10 seconds...the exit is active
             levelBatSuccess = true;
+            doorOpen.canBannerDisappear = true;
         }
     }
 }

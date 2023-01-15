@@ -10,12 +10,16 @@ public class GameManager : MonoBehaviour
     public bool isLevel1Finished;
     public bool isLevel2Finished;
     public bool isLevel3Finished;
-    public bool isLevel4Finished;
+    public bool isLevel4Finished;    
+    public bool isLevel5Finished;
+    public bool isLevel6Finished;
 
     [Header("Whether Show Dialogue")]
     public bool isLevel2DialogueShown;
     public bool isLevel3DialogueShown;
     public bool isLevel4DialogueShown;
+    public bool isLevel5DialogueShown;
+    public bool isLevel6DialogueShown;
 
     [Header("Dialogue System")]
     public DialogueSystem dialogueSystem;

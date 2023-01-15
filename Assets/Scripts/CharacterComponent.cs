@@ -34,6 +34,12 @@ public class CharacterComponent : MonoBehaviour
     [Header("Life State")]
     public bool isPlayerDead;
 
+    [Header("Feedback")]
+    public GameObject characterBlood;
+    AudioSource playerAudioSource;
+    public AudioClip jump_PlayerClip;
+    public AudioClip dead_PlayerClip;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -45,6 +51,7 @@ public class CharacterComponent : MonoBehaviour
     {
         //canMove = true;
         isPlayerDead = false;
+        playerAudioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -61,6 +68,9 @@ public class CharacterComponent : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space) && isRotating == false)
                 {
                     rb.velocity = new Vector2(rb.velocity.x, jumpHeight); //only change y axis
+
+                    playerAudioSource.clip = jump_PlayerClip;
+                    playerAudioSource.Play();
 
                 }
 
@@ -118,6 +128,10 @@ public class CharacterComponent : MonoBehaviour
                 canMove = false;
 
                 anim.SetBool("IsDead", true);
+                characterBlood.SetActive(true);
+
+                playerAudioSource.clip = dead_PlayerClip;
+                playerAudioSource.Play();
 
                 //Reload after character dead animation over
                 Invoke("ReloadScene", 3);

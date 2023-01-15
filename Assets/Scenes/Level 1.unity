@@ -242,7 +242,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!1 &110984380
 GameObject:
@@ -1751,9 +1751,9 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7885272324675872034, guid: b8e6cd1c5a165984babb2650bda8d267, type: 3}
-      propertyPath: shootingForce.y
-      value: 13
-      objectReference: {fileID: 0}
+      propertyPath: dead_PlayerClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ce4c28771d8d9d841bd06bc1f7251882, type: 3}
     - target: {fileID: 7885272324675872037, guid: b8e6cd1c5a165984babb2650bda8d267, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4534,7 +4534,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: -29}
+  m_AnchoredPosition: {x: 83, y: -43}
   m_SizeDelta: {x: 1672.99, y: 891.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1821190722

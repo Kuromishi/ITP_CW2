@@ -19,9 +19,13 @@ public class StraightLaser : MonoBehaviour
     public ParticleSystem laserParticle1;
     public ParticleSystem laserParticle2;
 
+    AudioSource straightLaserAudioSource;
+    public AudioClip laserClip;
+
     private void Start()
     {
         canLaserStart = true;
+        straightLaserAudioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -34,6 +38,9 @@ public class StraightLaser : MonoBehaviour
 
             //if(canLaser2Start)
             ShootLaser(laserLine2, firePoint2, laserParticle2);
+
+
+
         }
     }
 
@@ -48,7 +55,8 @@ public class StraightLaser : MonoBehaviour
 
         laserParticle.transform.position = hitInfo.point;
         laserParticle.Play();
-
+        straightLaserAudioSource.clip = laserClip;
+        straightLaserAudioSource.Play();
 
         if (hitInfo.collider.gameObject.GetComponentInParent<CharacterComponent>() != null)  //hit the player
         {

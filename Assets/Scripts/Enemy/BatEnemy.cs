@@ -7,6 +7,8 @@ public class BatEnemy : MonoBehaviour
     [Header("Death")]
     private Animator anim_Bat;
     public GameObject batBlood;
+    public AudioSource batAudioSource;
+    public AudioClip dead_BatClip;
     private Rigidbody2D batRB;
     private SpriteRenderer batRenderer;
     private bool canBatDisappear;
@@ -106,6 +108,10 @@ public class BatEnemy : MonoBehaviour
             batRB.gravityScale = 1;
             //Instantiate(batBlood, gameObject.transform);
             batBlood.SetActive(true);
+
+
+            batAudioSource.clip = dead_BatClip;
+            batAudioSource.Play();
 
             canBatMove = false;
 

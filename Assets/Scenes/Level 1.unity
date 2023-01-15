@@ -1979,14 +1979,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7885272324675872034, guid: b8e6cd1c5a165984babb2650bda8d267, type: 3}
-      propertyPath: xiu_PlayerClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 4eaf14e1921ae0141bece49248887c95, type: 3}
-    - target: {fileID: 7885272324675872034, guid: b8e6cd1c5a165984babb2650bda8d267, type: 3}
-      propertyPath: backToGround_PlayerClip
-      value: 
-      objectReference: {fileID: 8300000, guid: af290f907c9debe48a0f86a5a07e91bf, type: 3}
     - target: {fileID: 7885272324675872037, guid: b8e6cd1c5a165984babb2650bda8d267, type: 3}
       propertyPath: m_RootOrder
       value: 1

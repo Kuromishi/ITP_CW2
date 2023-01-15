@@ -30,6 +30,9 @@ public class GameManager : MonoBehaviour
     public Texture2D clickTexture;
     public Texture2D upTexture;
 
+    [Header("BGM")]
+    AudioSource BGMSource;
+
     private void Awake()
     {
         if (Instance == null)
@@ -43,6 +46,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        BGMSource = GetComponent<AudioSource>();
+    }
     private void Update()
     {
         if(Input.GetMouseButtonDown(0))

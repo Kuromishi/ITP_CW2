@@ -2420,7 +2420,7 @@ MonoBehaviour:
   characterComponent: {fileID: 1745924607}
   bannerRenderer: {fileID: 1822228848}
   canBannerDisappear: 0
-  disappearSpeed: 2
+  disappearSpeed: 3
 --- !u!1 &941659678
 GameObject:
   m_ObjectHideFlags: 0
@@ -4755,9 +4755,13 @@ MonoBehaviour:
   isLevel2Finished: 0
   isLevel3Finished: 0
   isLevel4Finished: 0
+  isLevel5Finished: 0
+  isLevel6Finished: 0
   isLevel2DialogueShown: 0
   isLevel3DialogueShown: 0
   isLevel4DialogueShown: 0
+  isLevel5DialogueShown: 0
+  isLevel6DialogueShown: 0
   dialogueSystem: {fileID: 962165911}
   panelDialogue: {fileID: 962165907}
   panelAnimator: {fileID: 962165912}

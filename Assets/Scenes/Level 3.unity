@@ -16225,7 +16225,7 @@ MonoBehaviour:
   characterComponent: {fileID: 1745924607}
   bannerRenderer: {fileID: 615749447}
   canBannerDisappear: 0
-  disappearSpeed: 2
+  disappearSpeed: 3
 --- !u!1 &399141843
 GameObject:
   m_ObjectHideFlags: 0

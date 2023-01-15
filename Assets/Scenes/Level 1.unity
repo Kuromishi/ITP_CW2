@@ -3003,9 +3003,13 @@ MonoBehaviour:
   isLevel2Finished: 0
   isLevel3Finished: 0
   isLevel4Finished: 0
+  isLevel5Finished: 0
+  isLevel6Finished: 0
   isLevel2DialogueShown: 0
   isLevel3DialogueShown: 0
   isLevel4DialogueShown: 0
+  isLevel5DialogueShown: 0
+  isLevel6DialogueShown: 0
   dialogueSystem: {fileID: 911594416}
   panelDialogue: {fileID: 911594411}
   panelAnimator: {fileID: 911594412}
@@ -5539,6 +5543,10 @@ PrefabInstance:
     - target: {fileID: 5026602773833127314, guid: a99302529fed7d4499a017095ff01b90, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8399837913613281295, guid: a99302529fed7d4499a017095ff01b90, type: 3}
+      propertyPath: disappearSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8399837913613281295, guid: a99302529fed7d4499a017095ff01b90, type: 3}
       propertyPath: characterComponent

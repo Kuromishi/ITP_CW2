@@ -72,12 +72,12 @@ public class Level5Component : MonoBehaviour
             return false;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.GetComponentInParent<CharacterComponent>() != null)
-        {
-            //closed to opened
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if (other.GetComponentInParent<CharacterComponent>() != null)
+    //    {
+    //        //closed to opened
 
-        }
-    }
+    //    }
+    //}
 }

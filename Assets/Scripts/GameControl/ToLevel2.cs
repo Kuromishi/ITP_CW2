@@ -5,7 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class ToLevel2 : MonoBehaviour
 {
-
+    public CharacterComponent characterComponent;
+    private void Start()
+    {
+        characterComponent.canMove = true;
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
 

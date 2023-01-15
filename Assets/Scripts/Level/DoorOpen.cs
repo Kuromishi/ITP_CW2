@@ -15,7 +15,6 @@ public class DoorOpen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        characterComponent.canMove = true;
     }
 
     // Update is called once per frame

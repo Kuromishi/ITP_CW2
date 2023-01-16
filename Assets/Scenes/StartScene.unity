@@ -243,7 +243,6 @@ MonoBehaviour:
   isLevel3DialogueShown: 0
   isLevel4DialogueShown: 0
   isLevel5DialogueShown: 0
-  isLevel6DialogueShown: 0
   dialogueSystem: {fileID: 1042726851}
   panelDialogue: {fileID: 1042726846}
   panelAnimator: {fileID: 1042726847}
@@ -1833,7 +1832,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 58b647c5b2ec4184e9a07a561cdf0644, type: 3}
-    m_FontSize: 120
+    m_FontSize: 110
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1

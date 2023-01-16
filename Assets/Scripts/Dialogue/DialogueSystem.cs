@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class DialogueSystem : MonoBehaviour
 {
+
+    //Create the dialogue System reference: https://www.bilibili.com/video/BV1WJ411Y71J/?spm_id_from=333.337.search-card.all.click
     public Text textLabel;
     public TextAsset textFile;
     public int index;
@@ -24,7 +26,7 @@ public class DialogueSystem : MonoBehaviour
     {
 
     }
-    private void OnEnable() //OnEnable会在Start之前调用,取消又激活用onEnable
+    private void OnEnable() //OnEnable is called before Start
     {
         //textLabel.text = textList[index];
         //index++;
@@ -41,7 +43,7 @@ public class DialogueSystem : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && index == textList.Count && canPlayDialogue) //如果输出到最后一个部分
+        if (Input.GetKeyDown(KeyCode.E) && index == textList.Count && canPlayDialogue) //the last part
         {
             gameObject.SetActive(false);
             index = 0;
@@ -59,7 +61,7 @@ public class DialogueSystem : MonoBehaviour
             }
             else if (!textFinished) //coroutine is starting
             {
-                cancelTyping = !cancelTyping; //每摁下摁键就改变值（在打字的时候，摁下摁键==cancel）
+                cancelTyping = !cancelTyping; 
             }
         }
     }
@@ -79,15 +81,10 @@ public class DialogueSystem : MonoBehaviour
 
     IEnumerator MovingTextUI()
     {
-        textFinished = false;  //一行文字结束后，才可以进行第二行字
-        textLabel.text = ""; //每行打完列表清空，再打下一行
+        textFinished = false;  //start the second lines when the first one is over 
+        textLabel.text = ""; //clear the list
 
-        //for(int i = 0; i < textList[index].Length; i++)  //获得一行中的每一个字符，获得当前行的长度
-        //{
-        //    textLabel.text += textList[index][i];  //第i个字符
 
-        //    yield return new WaitForSeconds(textSpeed);
-        //}
 
         int letter = 0;
         while (!cancelTyping && letter < textList[index].Length)

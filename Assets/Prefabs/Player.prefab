@@ -4978,7 +4978,7 @@ MonoBehaviour:
   isRotating: 0
   rotateSpeed: 1000
   downForce: 2
-  shootingForce: {x: 5, y: 13}
+  shootingForce: {x: 5, y: 12}
   isMouseDown: 0
   backToGround: 0
   isPlayerDead: 0
@@ -5295,7 +5295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2899659728284569639, guid: d82f120ab91a48a459477189fc781c7b, type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: -0.0000038146973
+      value: -0.0000019073486
       objectReference: {fileID: 0}
     - target: {fileID: -2899659728284569639, guid: d82f120ab91a48a459477189fc781c7b, type: 3}
       propertyPath: m_Bounds.m_Center.y
@@ -5331,7 +5331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2144220933715351661, guid: d82f120ab91a48a459477189fc781c7b, type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: -0.000001847744
+      value: 0.000000059604645
       objectReference: {fileID: 0}
     - target: {fileID: -2144220933715351661, guid: d82f120ab91a48a459477189fc781c7b, type: 3}
       propertyPath: m_Bounds.m_Center.y
